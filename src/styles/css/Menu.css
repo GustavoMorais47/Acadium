@@ -1,0 +1,37 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.option{
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option:hover{
+    transition: 0.5s;
+    background-color: var(--color-secundary);
+}
+
+.option a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
