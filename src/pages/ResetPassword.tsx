@@ -14,7 +14,7 @@ const ResetPassword = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5 }}>
                 <h1 style={{color: color_primary, fontSize: 'x-large'}}>Redefinir senha</h1>
-                <p style={{color: color_secundary, fontSize: 'x-small', textAlign: 'center'}}>Informe seu cpf, será aberto um chamado para redefinição da senha com o setor responsável. As instruções serão enviadas para o e-mail cadastrado. Aguarde </p>
+                <p style={{color: color_secundary, fontSize: 'smaller', textAlign: 'center'}}>Informe seu cpf, será aberto um chamado para redefinição da senha com o setor responsável. As instruções serão enviadas para o e-mail cadastrado.</p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ width: '95%', display: 'flex', flexDirection: 'column', gap: 10}}>

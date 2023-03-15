@@ -4,6 +4,7 @@ import { IoAddCircle, IoApps, IoCalendarClear, IoChatbox, IoLogOut } from "react
 import { Link } from "react-router-dom";
 import { color_background2, color_primary } from "../styles/colors";
 import '../styles/css/Menu.css';
+import logo from '../assets/logo_branca.svg';
 
 type MenuType = {
     handleLogout: MouseEventHandler<HTMLButtonElement>
@@ -40,7 +41,9 @@ export const Menu = ({ handleLogout }: MenuType) => {
         paddingTop: 10,
         paddingBottom: 10
     }}>
-        <div className='option'></div>
+        <div className='option'>
+            <Link to="/"><img src={logo} alt="Logo Acadium" width={30}/></Link>
+        </div>
         <hr style={{
             opacity: 0.2,
             border: '1px solid' + color_background2,

@@ -21,8 +21,8 @@ const Container = ({ component }: ContainerType) => {
 
     return <div style={{ display: 'flex', flexDirection: 'row' }}>
         <Menu handleLogout={handleLogout} />
-        <section style={{marginLeft: 60, paddingTop: 10, paddingLeft: 10, paddingRight: 10, width: '100%'}}>
-            {component}
+        <section style={{ marginLeft: 60, paddingTop: 10, paddingLeft: 10, paddingRight: 10, width: '100%' }}>
+            {component}            
         </section>
     </div>
 }

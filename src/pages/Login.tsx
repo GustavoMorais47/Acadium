@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 // import '../styles/LoginPage.css';
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contexts/Auth/AuthContext";
-// import { ToastContainer } from "react-toastify";
 import Layout from "../components/Layout";
 import { color_primary, color_secundary, color_tertiary } from "../styles/colors";
+import { toast } from "react-toastify";
 
 const Login = () => {
     const auth = useContext(AuthContext);
@@ -15,12 +15,38 @@ const Login = () => {
 
     const handleLogin = async () => {
         if (cpf && password) {
-            const isLogged = await auth.signin(cpf, password);
-            if (isLogged) {
-                navigate('/');
-            } else {
-                alert('Não deu certo')
+            if (cpf.length === 11) {
+                const isLogged = await auth.signin(cpf, password);
+                if (isLogged) {
+                    navigate('/');
+                } else {
+                    alert('Não deu certo')
+                }
+            }else{
+                toast.error('CPF inválido', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    style: { fontSize: 'small' },
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
+        } else {
+            toast.warn('Ambos os campos são de preenchimento obrigatório ', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                style: { fontSize: 'small' },
+                progress: undefined,
+                theme: "light",
+            });
         }
     }
 
@@ -32,7 +58,7 @@ const Login = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <div style={{ width: '95%', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                    <div style={{display: 'flex', flexDirection: 'column', gap: 5}}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                         <label htmlFor="cpfInput">CPF</label>
                         <input id="cpfInput" name="cpfInput"
                             type='text'
@@ -42,7 +68,7 @@ const Login = () => {
                             placeholder="Insira seu CPF"
                             required />
                     </div>
-                    <div style={{display: 'flex', flexDirection: 'column', gap: 5}}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
                         <label htmlFor="senhaInput">Senha</label>
                         <input id="senhaInput" name="senhaInput"
                             type='password'
@@ -52,9 +78,9 @@ const Login = () => {
                             required />
                     </div>
                     <button onClick={handleLogin} className="button">Entrar</button>
-                    <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 5, fontSize: 'small', color: color_primary}}>
+                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 5, fontSize: 'small', color: color_primary }}>
                         <p>Esqueceu sua senha?</p>
-                        <Link to="/reset-password" style={{color: color_tertiary, textDecoration: 'none'}}>Redefinir senha</Link>
+                        <Link to="/reset-password" style={{ color: color_tertiary, textDecoration: 'none' }}>Redefinir senha</Link>
                     </div>
                 </div>
             </div>
