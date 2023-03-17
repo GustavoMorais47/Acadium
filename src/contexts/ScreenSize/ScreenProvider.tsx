@@ -2,11 +2,17 @@ import React, { useEffect, useState } from "react";
 import ScreenContext, { ScreenContextType } from "./ScreenContext"
 
 const ScreeenProvider = ({children}:{children: JSX.Element}) => {
-    const [screenSize, setScreenSize] = useState<ScreenContextType>({width: 0, height: 0});
+    const [screenSize, setScreenSize] = useState<ScreenContextType>({
+      width: 0,
+      height: 0
+    });
 
     useEffect(() => {
         const updateScreenSize = () => {
-          setScreenSize({ width: window.innerWidth, height: window.innerHeight });
+          setScreenSize({
+             width: window.innerWidth, 
+             height: window.innerHeight
+            });
         };
     
         // Adiciona um listener ao resize da janela para atualizar o tamanho da tela

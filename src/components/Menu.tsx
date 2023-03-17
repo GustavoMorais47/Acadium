@@ -18,7 +18,7 @@ type OptionsType = {
 }
 
 const SuperiorOptions: OptionsType[] = [
-    { id: 0, tittle: 'Apps', to: '/', icon: IoApps },
+    { id: 0, tittle: 'Apps', to: '/apps', icon: IoApps },
     { id: 1, tittle: 'Agendar', to: '/to-schedule', icon: IoCalendarClear },
     { id: 2, tittle: 'Cadastrar', to: '/register', icon: IoAddCircle },
 ]
@@ -41,9 +41,9 @@ export const Menu = ({ handleLogout }: MenuType) => {
         paddingTop: 10,
         paddingBottom: 10
     }}>
-        <div className='option'>
-            <Link to="/"><img src={logo} alt="Logo Acadium" width={30}/></Link>
-        </div>
+        <Link to="/" className='option'>
+            <img src={logo} alt="Logo Acadium" width={30} />
+        </Link>
         <hr style={{
             opacity: 0.2,
             border: '1px solid' + color_background2,
@@ -55,9 +55,9 @@ export const Menu = ({ handleLogout }: MenuType) => {
             <div>
                 {
                     SuperiorOptions.map(op => {
-                        return <div className='option' title={op.tittle} key={op.id}>
-                            <Link to={op.to}><op.icon size={26} color='#fff' /></Link>
-                        </div>
+                        return <Link className='option' to={op.to} title={op.tittle} key={op.id}>
+                            <op.icon size={26} color='#fff' />
+                        </Link>
                     })
                 }
             </div>
@@ -65,9 +65,9 @@ export const Menu = ({ handleLogout }: MenuType) => {
             <div>
                 {
                     LowerOptions.map(op => {
-                        return <div className='option' title={op.tittle} key={op.id}>
-                            <Link to={op.to}><op.icon size={26} color='#fff' /></Link>
-                        </div>
+                        return <Link className='option' to={op.to} title={op.tittle} key={op.id}>
+                            <op.icon size={26} color='#fff' />
+                        </Link>
                     })
                 }
                 <button title='Sair' className='option' onClick={handleLogout}>

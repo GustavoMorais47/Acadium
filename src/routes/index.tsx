@@ -1,28 +1,34 @@
 import React from "react";
-//Dependencias
 import { Route, Routes } from "react-router-dom";
+// import Home from "../pages/private/Home";
+import Login from "../pages/public/Login";
+import ResetPassword from "../pages/public/ResetPassword";
+import NotFound from "../pages/public/NotFound";
 
-//Contextos
-import { RequireAuth } from "../contexts/Auth/RequireAuth";
-
-//Páginas
-import ResetPassword from "../pages/ResetPassword";
-import NotFound from "../pages/NotFound";
-import Container from "../components/Container";
-import Home from "../pages/Home";
+// const PrivateRouter = ({children}: any) =>{
+//     return children
+// }
 
 const Router = () => {
     return <Routes>
-        {/*Pública*/}
+        <Route path="/login" element={<Login/>}/>
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="*" element={<NotFound/>}/>
-        {/*Privada*/}
-        <Route path="/" element={
-            <RequireAuth>
-                <Container component={<Home/>}/>
-            </RequireAuth>
-        } />
+        <Route path="*" element={<NotFound />} />
+        {/* <Route path="/" element={<Home/>}/> */}
     </Routes>
 }
 
 export default Router;
+
+// eslint-disable-next-line no-lone-blocks
+{/* <Routes>
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<RequireAuth><Container /></RequireAuth>}>
+            <Route path='/' element={<Home />} />
+            <Route path='/apps' element={<Apps />} />
+            <Route path='/to-schedule' element={<ToSchedule />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/called' element={<Called />} />
+        </Route>
+    </Routes> */}
