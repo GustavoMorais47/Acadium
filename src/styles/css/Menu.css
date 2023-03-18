@@ -1,37 +1,21 @@
-.menu{
+.buttonOptionMenu{
+    background-color: transparent;
+    padding: 5px;
+    border: 0;
+    border-radius: 10px;
+    color: var(--color-background2);
+    font-size: small;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
-}
-
-.menu div {
-    display: flex;
-    flex-direction: column;
+    align-content: center;
     gap: 5px;
 }
 
-.option{
-    height: 40px;
-    width: 40px;
-    background-color: transparent;
-    border-radius: 10px;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+.buttonOptionMenu:hover{
+    background-color: var(--color-tertiary);
 }
 
-.option:hover{
-    transition: 0.5s;
-    background-color: var(--color-secundary);
-}
-
-.option a{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.buttonOptionMenu label {
+    line-height: 20px;
 }

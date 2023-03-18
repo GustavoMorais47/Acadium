@@ -1,13 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
-import Login from "../../pages/public/Login";
+import { useNavigate } from "react-router-dom";
 
-export const RequireAuth = ({children}: {children: JSX.Element})=>{
+export const RequireAuth = ({children}: {children: React.ReactElement})=>{
     const auth = useContext(AuthContext);
+    const navigate = useNavigate();
 
-    if(!auth.user){
-        return <Login/>
-    }
+    useEffect(()=>{
+        if(!auth.user){
+            navigate('/login');
+            console.log('Ué')
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
 
     return children;
 }
