@@ -30,3 +30,19 @@ a:hover{
     background-color: var(--color-tertiary);
     color: var(--color-background2);
 }
+
+.title{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form div{
+    display: flex;
+    flex-direction: column
+}

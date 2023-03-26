@@ -4,7 +4,7 @@ import '../styles/css/Menu.css';
 import logo from '../assets/logo.svg';
 import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { HiArrowSmLeft, HiMenu, HiMenuAlt2 } from 'react-icons/hi';
-import { IoAddCircle, IoApps, IoChatbox } from 'react-icons/io5';
+import { IoApps } from 'react-icons/io5';
 import { FaUserAlt } from 'react-icons/fa';
 import { IconType } from "react-icons";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,11 +20,10 @@ type OptionsType = {
 
 const SuperiorOptions: OptionsType[] = [
     { id: 0, title: 'Apps', to: '/apps', icon: IoApps },
-    { id: 2, title: 'Cadastrar', to: '/register', icon: IoAddCircle },
 ]
 
 const LowerOptions: OptionsType[] = [
-    { id: 0, title: 'Chamados', to: '/called', icon: IoChatbox },
+    
 ]
 
 export const Menu = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: React.Dispatch<React.SetStateAction<boolean>> }) => {
@@ -53,7 +52,7 @@ export const Menu = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu
             </button>
             <Link to="/" style={{width: isMobile ? '50%' : '20%'}}><img src={logo} alt="Acadium Logo" /></Link>
             <BrowserView>
-                <button type="button" className="btn btn-light" style={{ display: 'flex', flexDirection: 'row', gap: 7 }}><label>Olá {user?.name}</label><FaUserAlt size={20} color={color_secundary} /></button>
+                <button type="button" className="btn btn-light" style={{ display: 'flex', flexDirection: 'row', gap: 7 }}><label>Olá $User{user?.name}</label><FaUserAlt size={20} color={color_secundary} /></button>
             </BrowserView>
             <MobileView>
                 <div />

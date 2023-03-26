@@ -12,11 +12,15 @@ const Router = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<RequireAuth><Container /></RequireAuth>}>
-            <Route path='/' element={<Outlet/>}/>
-            <Route path='/profile' element={<Outlet/>}/>
-            <Route path='/apps' element={<Outlet/>}/>
-            <Route path='/register' element={<Outlet/>}/>
-            <Route path='/called' element={<Outlet/>}/>
+            <Route path='/' element={<Outlet />} />
+            <Route path='/apps' element={<Outlet />}>
+                <Route path='/apps/' element={<Outlet />} />
+                <Route path="/apps/room-manager" element={<Outlet />}>
+                    <Route path='/apps/room-manager/' element={<Outlet />} />
+                    <Route path='/apps/room-manager/new' element={<Outlet />} />
+                    <Route path='/apps/room-manager/reserve' element={<Outlet />} />
+                </Route>
+            </Route>
         </Route>
     </Routes>
 }

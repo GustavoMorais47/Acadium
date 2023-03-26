@@ -7,7 +7,7 @@ export const RequireAuth = ({children}: {children: React.ReactElement})=>{
     const navigate = useNavigate();
 
     useEffect(()=>{
-        if(!auth.user){
+        if(auth.user){
             navigate('/login');
             console.log('Ué')
         }
