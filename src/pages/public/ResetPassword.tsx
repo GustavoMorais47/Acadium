@@ -1,3 +1,15 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
 import '../../styles/css/ContainerLayout.css';
 import restoreKey from '../../assets/restore_key.svg';
 import Layout from '../../components/Layout';
@@ -5,6 +17,20 @@ import { useNavigate } from 'react-router-dom';
 import { isBrowser, isMobile } from 'react-device-detect';
 import { color_primary, color_secundary } from '../../styles/colors';
 import { useState } from 'react';
+
+/*
+    O código é um componente chamado ResetPassword que exporta um formulário de redefinição de senha.
+    Ele importa um arquivo CSS de estilo, uma imagem SVG, um componente Layout e algumas funções do React.
+    Em seguida, define um estado inicial para cpf com useState e uma função handleSubmit que é chamada quando
+    o formulário é enviado.
+    O componente Layout é utilizado para organizar o conteúdo, o que é feito em uma seção que contém a imagem
+    da logo, um título, um parágrafo informativo e o formulário de redefinição de senha em si. O formulário
+    contém um campo de texto para o cpf, que é validado e atualizado com a função setCpf quando o usuário digita.
+    Além disso, há um botão de enviar e um botão de voltar, que redireciona para a página de login.
+    O código também utiliza algumas constantes de cores para estilização. A largura e altura da seção são
+    definidas com base no dispositivo do usuário usando isMobile e isBrowser, e o tamanho da imagem é ajustado
+    de acordo.
+*/
 
 const ResetPassword = () => {
     const navigate = useNavigate();

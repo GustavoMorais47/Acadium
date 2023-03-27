@@ -1,16 +1,29 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
 import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { IconType } from "react-icons";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { color_background2, color_primary, color_secundary } from "../styles/colors";
 import '../styles/css/Menu.css';
 import logo from '../assets/logo.svg';
-import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { HiArrowSmLeft, HiMenu, HiMenuAlt2 } from 'react-icons/hi';
 import { IoApps } from 'react-icons/io5';
 import { FaUserAlt } from 'react-icons/fa';
-import { IconType } from "react-icons";
-import { Link, useNavigate } from "react-router-dom";
 import ScreenContext from "../contexts/ScreenSize/ScreenContext";
 import { AuthContext } from "../contexts/Auth/AuthContext";
 
+//Define um tipo para as opções do menu
 type OptionsType = {
     id: number,
     title: string,
@@ -18,14 +31,24 @@ type OptionsType = {
     icon: IconType
 }
 
+//Define as opções para o menu superior
 const SuperiorOptions: OptionsType[] = [
     { id: 0, title: 'Apps', to: '/apps', icon: IoApps },
 ]
 
+//Define as opções para o menu inferior
 const LowerOptions: OptionsType[] = [
     
 ]
 
+/*
+    define um componente de menu que renderiza diferentes opções de menu com base no estado de showMenu
+    e fornece funcionalidades de navegação por meio do hook useNavigate.
+    O componente também usa o contexto AuthContext para exibir o nome do usuário e o contexto ScreenContext
+    para obter a altura da tela. O menu se ajusta à largura da tela e apresenta diferentes estilos
+    para a versão móvel e para a versão desktop. O código também define diferentes opções de menu como
+    matrizes de objetos e usa essas opções para renderizar botões que executam a função handleOption quando clicados.
+*/
 export const Menu = ({ showMenu, setShowMenu }: { showMenu: boolean, setShowMenu: React.Dispatch<React.SetStateAction<boolean>> }) => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);

@@ -1,8 +1,25 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
 import { useContext } from "react";
-import ScreenContext from "../contexts/ScreenSize/ScreenContext";
-import logo from '../assets/logo.svg';
-import { color_background } from "../styles/colors";
 import { isMobile } from "react-device-detect";
+import ScreenContext from "../contexts/ScreenSize/ScreenContext";
+import { color_background } from "../styles/colors";
+import logo from '../assets/logo.svg';
+
+/* 
+    O bloco de código abaixo mostra exporta o componente Layout,
+    esse componente é responsável por estruturar o layout do sistema nas rotas públicas.
+*/
 
 const Layout = ({children}:{children: JSX.Element}) => {
     const screenSize = useContext(ScreenContext);

@@ -1,7 +1,21 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
 import { LaboratoryType } from "../types/laboratory";
 import { LaboratoryEquipmentType } from "../types/laboratoryEquipment";
 import { LaboratoryFurnitureType } from "../types/laboratoryFurniture";
 import { Reservation } from "../types/reservation";
+
+//Simula um banco de dados estático
 
 export const RervationsDB: Reservation[] = [];
 export const LaboratoryDB: LaboratoryType[] = [

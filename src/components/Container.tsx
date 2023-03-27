@@ -1,13 +1,33 @@
-import React, { useContext, useState } from 'react';
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
+import { useContext, useState } from 'react';
 import { Outlet, Route, Routes } from 'react-router-dom';
-import { Menu } from './Menu';
+import ScreenContext from '../contexts/ScreenSize/ScreenContext';
 import { color_background } from '../styles/colors';
 import Unavailable from '../pages/private/Unavailable';
 import Apps from '../pages/private/Apps';
+import { Menu } from './Menu';
 import RoomManager from '../pages/private/Apps/RoomManager';
-import ScreenContext from '../contexts/ScreenSize/ScreenContext';
 import NewRoom from '../pages/private/Apps/RoomManager/NewRoom';
 import ReserveRoom from '../pages/private/Apps/RoomManager/Reserve';
+
+/*
+    O bloco de código abaixo mostra exporta o componente Conteiner,
+    esse componente é responsável por estruturar o layout do sistema nas rotas privadas,
+    mantendo o componente Menu acima do restante das telas.
+    As telas são acessadas através das rotas definidas no endereço
+    ./src/routes/index.tsx 
+*/
 
 const Container = () => {
     const [showMenu, setShowMenu] = useState<boolean>(false);

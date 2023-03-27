@@ -1,4 +1,27 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
 import { LaboratoryEquipmentDB, LaboratoryFurnitureDB } from "../../../../database"
+
+/*
+    Renderiza um formulário para criar uma nova sala de laboratório. O formulário possui campos
+    de entrada para nome, localização, capacidade e regras/políticas, bem como caixas de seleção
+    para equipamentos e móveis.
+    O componente usa duas variáveis de um módulo de banco de dados, LaboratoryEquipmentDB e
+    LaboratoryFurnitureDB, para renderizar as caixas de seleção de equipamentos e móveis. Caso não haja
+    itens em nenhuma dessas variáveis, uma mensagem é exibida para informar ao usuário que não há
+    equipamentos ou móveis disponíveis para escolha.
+    No momento não possui o submit devido a ausencia do back end
+*/
 
 const NewRoom = () => {
     return <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
@@ -16,7 +39,7 @@ const NewRoom = () => {
                 <input type='number' className="form-control" id="inputCapacity" min={0} required/>
             </div>
             <div>
-                <label htmlFor="exampleInputEmail1" className="form-label">Equipamentos</label>
+                <label className="form-label">Equipamentos</label>
                 {LaboratoryEquipmentDB.length === 0 ?
                     <label className="form-text"> 
                         Nenhuma equipamento cadastrado
@@ -36,7 +59,7 @@ const NewRoom = () => {
                 }
             </div>
             <div>
-                <label htmlFor="exampleInputEmail1" className="form-label">Mobiliário</label>
+                <label className="form-label">Mobiliário</label>
                 {LaboratoryFurnitureDB.length === 0 ?
                     <label className="form-text">
                         Nenhuma mobília cadastrada
@@ -56,8 +79,8 @@ const NewRoom = () => {
                 }
             </div>
             <div>
-                <label htmlFor="exampleInputEmail1" className="form-label">Regras e políticas</label>
-                <textarea className="form-control" rows={5} />
+                <label htmlFor="rulesPolicy" className="form-label">Regras e políticas</label>
+                <textarea className="form-control" rows={5} id='rulesPolicy'/>
             </div>
             <button type="submit" className="btn button">Cadastrar</button>
         </form>

@@ -1,8 +1,29 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
 import Layout from "../../components/Layout";
 import ErroNotFound from '../../assets/not_found.svg';
 import { color_primary } from "../../styles/colors";
 import { isMobile } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
+
+/*
+    O componente importa Layout de um arquivo de componente, ErroNotFound de um arquivo de imagem, 
+    color_primary de um arquivo de estilo, isMobile de react-device-detect e useNavigate de react-router-dom.
+    O componente então retorna um componente Layout que contém um elemento de seção com um 
+    estilo dinâmico que varia conforme o tamanho da tela é considerado móvel ou não. Dentro desta seção,
+    há um elemento div que exibe a imagem ErroNotFound com um estilo dinâmico que ajusta sua largura com
+    base no tamanho da tela ser considerado móvel ou não.
+*/
 
 const NotFound = () => {
     const navigate = useNavigate();

@@ -1,8 +1,37 @@
+/*
+    Curso de Engenharia de Software - UniEVANGÉLICA 
+    Disciplina de Programação Web
+    Projeto: Acadium 
+    Devs:   Bruno Paiva - 2111579
+            Gustavo Morais - 2111296
+            João Pedro Braga Gomes- 2110157
+            Luana Teixeira de Moraes - 2110867
+            Lucas de Carvalho - 2110160
+            Vanessa Nassar aji-2311987 
+    26/03/2023 
+*/
+
 import { IoAddCircle } from "react-icons/io5";
 import { BsFillCalendarCheckFill } from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
 import { RervationsDB } from "../../../../database";
 import { ChangeEvent, useEffect, useState } from "react";
+
+/*
+    Utiliza várias bibliotecas do React, como react-icons, react-router-dom e useState e useEffect hooks.
+    Ele exibe dois botões para cadastrar uma nova sala/laboratório e realizar um agendamento e uma
+    tabela que lista as reservas de salas/laboratórios. O usuário pode pesquisar por ID ou responsável
+    para filtrar as reservas.
+    O componente usa uma variável de estado 'search' para armazenar o valor de entrada do usuário para
+    pesquisa e, em seguida, usa um useEffect hook para filtrar as reservas com base na pesquisa do usuário.
+    A função handleInputSearchChange é chamada sempre que o valor da entrada do usuário muda e atualiza o
+    valor da variável 'search'.
+    O componente também usa a função useNavigate do react-router-dom para navegar para outras páginas da
+    aplicação quando o usuário clica em um dos botões de ação.
+    O componente usa a tabela HTML para exibir as reservas. Se houver reservas correspondentes, ele mapeia
+    a matriz de reservas filtradas e renderiza uma linha de tabela para cada reserva. Se não houver reservas
+    correspondentes, ele renderiza uma linha de tabela indicando que não foram encontradas reservas.
+*/
 
 const RoomManager = () => {
     const navigate = useNavigate();
